@@ -1,10 +1,16 @@
+import { Container } from 'react-bootstrap';
+import OrderEntry from './pages/entry/OrderEntry';
 import './App.css';
 import SummaryForm from './pages/summary/SummaryForm';
+import { OrderDetailsProvider } from './contexts/OrderDetails';
 function App() {
   return (
-    <div className="App">
-      <SummaryForm />
-    </div>
+    <Container>
+      <OrderDetailsProvider>
+        {/*summary and entry page need provider confirmation page does not*/}
+        <OrderEntry />
+      </OrderDetailsProvider>
+    </Container>
   );
 }
 
